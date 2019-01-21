@@ -1,10 +1,10 @@
 ## Job-Recruitment-System
 
-#Front-End:
+# Front-End:
 HTML, CSS, JavaScript, JQuery
 
-#Back-End:
+# Back-End:
 PHP
 
-#Database:
+# Database:
 Mysql
