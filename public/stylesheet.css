@@ -1,0 +1,59 @@
+body
+{
+	background-color: #F5FFFA;
+	font-family: "verdana";
+}
+#login-header
+{
+	position: absolute;
+	z-index: 15;
+	top: 50%;
+	left: 43%;
+	margin: -100px 0 0 -150px;
+	font-size: 25px;
+	cursor : pointer;
+}
+#login-header > div
+{
+	padding : 2px;
+	border-radius: 2px;
+	height: 50px;
+}
+#admin-login-tag
+{
+	background-color: #FA8072;
+}
+#student-login-tag
+{
+	background-color: #ADD8E6;
+}
+#company-login-tag
+{
+	background-color: #66CDAA;
+	font-family: "verdana";
+}
+#admin-login-tag:hover
+{
+	background-color: #d92626;
+}
+#student-login-tag:hover
+{
+	background-color: #4080bf;
+}
+#company-login-tag:hover
+{
+	background-color: 	#40bf60;
+}
+.login-form
+{
+	font-size: 15px;
+}
+#admin-login-form, #student-login-form, #company-login-form
+{
+	position: absolute;
+	z-index: 15;
+	width : 45%;
+	top: 60%;
+	left: 45%;
+	margin: -100px 0 0 -150px;
+}
