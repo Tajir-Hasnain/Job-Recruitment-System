@@ -13,7 +13,8 @@ if(isset($_SESSION["cid"]))
 		$postdate=date('Y-m-d'); 
 		$lastdate=mysqli_real_escape_string($connection, $_POST["lastdate"]); 
 		$description=mysqli_real_escape_string($connection, $_POST["description"]);
-		$query="INSERT INTO comjob (cid, postname, slot,postdate,expdate,jobdes,display) VALUES ('$cid', '$name', '$vaccancy','$postdate','$lastdate','$description','1');";
+		$requirements=mysqli_real_escape_string($connection,$_POST['requirements']);
+		$query="INSERT INTO comjob (cid, postname, slot,postdate,expdate,jobdes,requirements,display) VALUES ('$cid', '$name', '$vaccancy','$postdate','$lastdate','$description','$requirements','1');";
 		runQuery($connection, $query);
 		unset($_POST["submit"]);
 		mysqli_close($connection);
@@ -41,7 +42,8 @@ if(isset($_SESSION["cid"]))
 				Job Post : <input type="text" name="name" required><br><br>
 				Vaccancies :&nbsp<input  type="number" name="vaccancy" required><br><br>
 				Expire Date : <input  type="Date" name="lastdate" required><br><br>
-				Job Description : <input  type="text" name="description" required><br><br>
+				Job Description : <textarea  type="text" name="description" required></textarea><br><br>
+				Requirements : <textarea type="text" name="requirements" required></textarea><br><br>
 				<button  type="submit" name="submit" value="submit">Submit </button>
 			</form>
 		</div>

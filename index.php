@@ -208,7 +208,7 @@ else
 
     </style>
 </head>
-<body class = "container"  >
+<body class = "container">
 												<!--Navigation Bar-->
 	
 	<nav class="navbar navbar-expand-sm bg-light">
@@ -225,6 +225,8 @@ else
 			}
 		?>
 	</div>
+	
+
 	<div class = "row" id = "login-header">
 		<div class = "col-*-*" id="admin-login-tag" onclick="clickFunction('admin')">Admin Login</div>
 		<div class="col-*-*" id="student-login-tag" onclick="clickFunction('student')">Student Login</div>

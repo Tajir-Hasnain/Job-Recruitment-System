@@ -13,6 +13,7 @@ if(isset($_SESSION["cid"]))
 					<th>Number of Vaccancies</th>
 					<th>Date of Post</th>
 					<th>Expiration Date</th>
+					<th>Details</th>
 					<th>Availability</th>
 				</tr>
 			</thead>
@@ -28,9 +29,10 @@ if(isset($_SESSION["cid"]))
 ?>
 					<tr>
 							<td><?php echo $row['postname']?></td>
-							<td><?php echo $row['vaccantpost']?></td>
+							<td><?php echo ($row['slot'] - $row['applied']) ?></td>
 							<td><?php echo $row['postdate']?></td>
 							<td><?php echo $row['expdate']?></td>
+							<td><a href="jobdetails.php?jobid=<?php echo $row['jobid']?>">View Details</a></td>
 		<?php   echo 		'<td style="cursor:pointer" onclick=location.href="'.$url.'">';
 							if ($row['display']=="1")
 							{

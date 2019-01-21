@@ -21,7 +21,7 @@ if(isset($_SESSION["sid"]))
 	<?php
 			
 					$connection=connectDb();
-					$query="SELECT * FROM comjob WHERE display='1' AND DATE(NOW()) <= expdate and NOT EXISTS(SELECT * FROM application WHERE jobid = comjob.jobid AND applied < slot AND sid = '".$_SESSION['sid']."')";
+					$query="SELECT * FROM comjob WHERE display='1' AND DATE(NOW()) <= expdate AND applied < slot and NOT EXISTS(SELECT * FROM application WHERE jobid = comjob.jobid AND sid = '".$_SESSION['sid']."')";
 					$result=runQuery($connection, $query);
 					while($info=mysqli_fetch_assoc($result))
 					{
@@ -33,9 +33,10 @@ if(isset($_SESSION["sid"]))
 						<tr>
 							<td><?php echo $info2['companyname']?></td>
 							<td><?php echo $info['postname']?></td>
-							<td><?php echo $info['vaccantpost']?></td>
+							<td><?php echo ($info['slot'] - $info['applied'])?></td>
 							<td><?php echo $info['postdate']?></td>
 							<td><?php echo $info['expdate']?></td>
+							<td><a href="jobdetails.php?jobid=<?php echo $info['jobid']?>">View Details</a></td>
 							<td>
 								<button class='btn btn-success' name = "apply" onclick=location.href="<?php echo $url;?>">Apply</button>
 							</td>
